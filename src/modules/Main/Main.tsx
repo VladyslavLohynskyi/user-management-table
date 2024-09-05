@@ -1,6 +1,7 @@
 import './Main.scss';
 import { useAppSelector } from '../../hooks/redux';
 import UserItem from '../ui/UserItem/UserItem';
+import { Filters } from '../ui/Filters';
 
 function Main() {
    const { users, isUsersLoading } = useAppSelector(
@@ -9,7 +10,7 @@ function Main() {
 
    return (
       <main className='main max-width'>
-         <div></div>
+         <Filters />
          <div className='user-list'>
             {isUsersLoading ? (
                <p>...Loading</p>
