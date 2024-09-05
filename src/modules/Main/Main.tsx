@@ -9,20 +9,23 @@ function Main() {
 
    return (
       <main className='main max-width'>
-         {isUsersLoading ? (
-            <p>...Loading</p>
-         ) : (
-            <div>
-               <div className='user-list__headers'>
-                  <p>User Information</p>
-                  <p>Address</p>
-                  <p>Company</p>
+         <div></div>
+         <div className='user-list'>
+            {isUsersLoading ? (
+               <p>...Loading</p>
+            ) : (
+               <div>
+                  <div className='user-list__headers'>
+                     <p>User Information</p>
+                     <p>Address</p>
+                     <p>Company</p>
+                  </div>
+                  {users.map((user) => (
+                     <UserItem key={user.id} user={user} />
+                  ))}
                </div>
-               {users.map((user) => (
-                  <UserItem key={user.id} user={user} />
-               ))}
-            </div>
-         )}
+            )}
+         </div>
       </main>
    );
 }
