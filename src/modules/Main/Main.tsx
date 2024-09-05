@@ -12,7 +12,16 @@ function Main() {
          {isUsersLoading ? (
             <p>...Loading</p>
          ) : (
-            users.map((user) => <UserItem key={user.id} user={user} />)
+            <div>
+               <div className='user-list__headers'>
+                  <p>User Information</p>
+                  <p>Address</p>
+                  <p>Company</p>
+               </div>
+               {users.map((user) => (
+                  <UserItem key={user.id} user={user} />
+               ))}
+            </div>
          )}
       </main>
    );
