@@ -1,9 +1,11 @@
 import { $host } from '.';
-import { IUser } from '../utils/interfaces';
+import { IFilters, IUser } from '../utils/interfaces';
 
 class UsersReq {
-   getUsers = async () => {
-      const { data } = await $host.get<IUser[]>('/users/');
+   getUsers = async (filters: IFilters) => {
+      const { data } = await $host.get<IUser[]>('/users/', {
+         params: { ...filters },
+      });
       return data;
    };
 }

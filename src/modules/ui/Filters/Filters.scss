@@ -1,6 +1,19 @@
 .filters {
-   margin: 10px;
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
+   padding: 10px;
+   grid-template-columns: 1fr;
    column-gap: 10px;
+   border-bottom: 2px solid black;
+}
+
+@media (min-width: 376px) {
+   .filters {
+      grid-template-columns: 1fr 1fr;
+   }
+}
+
+@media (min-width: 768px) {
+   .filters {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+   }
 }

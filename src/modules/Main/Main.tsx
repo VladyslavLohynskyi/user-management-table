@@ -12,19 +12,21 @@ function Main() {
       <main className='main max-width'>
          <Filters />
          <div className='user-list'>
+            <div className='user-list__headers'>
+               <p>User Information</p>
+               <p>Address</p>
+               <p>Company</p>
+            </div>
             {isUsersLoading ? (
-               <p>...Loading</p>
-            ) : (
-               <div>
-                  <div className='user-list__headers'>
-                     <p>User Information</p>
-                     <p>Address</p>
-                     <p>Company</p>
-                  </div>
-                  {users.map((user) => (
-                     <UserItem key={user.id} user={user} />
-                  ))}
+               <div className='user-list__message'>
+                  <p>...Loading</p>
                </div>
+            ) : users.length === 0 ? (
+               <div className='user-list__message'>
+                  <p>No Users Found For These Filters</p>
+               </div>
+            ) : (
+               users.map((user) => <UserItem key={user.id} user={user} />)
             )}
          </div>
       </main>
