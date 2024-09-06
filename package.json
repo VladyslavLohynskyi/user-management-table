@@ -2,7 +2,7 @@
    "homepage": "https://vladyslavlohynskyi.github.io/user-management-table",
    "name": "user-management-table",
    "version": "0.1.0",
-   "private": true,
+   "private": false,
    "dependencies": {
       "@reduxjs/toolkit": "^2.2.7",
       "@testing-library/jest-dom": "^5.17.0",
